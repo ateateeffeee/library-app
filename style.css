@@ -1,0 +1,66 @@
+/*.card:nth-child(odd) {
+    background: #52ce90;
+    color: #fff;
+  }*/
+
+  .card {
+    outline-style: solid;
+    outline-color: black;
+
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:20px;
+    margin-right:20px;
+
+    padding: 5px;
+    
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+
+    color: black;
+    
+    
+
+  }
+
+  .deleteBook {
+    background-color: red;
+    color: white;
+    width: 75px;
+  }
+
+  .readBook {
+    width: 75px;
+  }
+
+  #addBook {
+    background-color: rgb(0, 238, 255);
+    padding: 10px 24px;
+    border-radius: 6px;
+
+  }
+
+  #addBook:hover {
+    background-color: yellow;
+  }
+
+  #library {
+    padding: 25px;
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #eraseButton {
+    background-color: rgb(236, 0, 51);
+    padding: 10px 24px;
+    border-radius: 6px;
+
+    color: white;
+  }
+
+  #eraseButton:hover {
+    background-color: rgb(255, 77, 225);
+  }
