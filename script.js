@@ -4,7 +4,7 @@
 
 //Array to hold books
 let myLibrary = [];
-
+/*
 //Constructor
 function Book(author, title, pages, read) {
     this.author = author;
@@ -12,6 +12,21 @@ function Book(author, title, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+*/
+
+//Book Class
+//Can use this or constructor above. It works the same.
+class Book {
+    constructor(author, title, pages, read) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
+//let book1 = new MyBook("J.K. Simmons", "Tobey Potter and the Arm", 500, true);
+
 //Starting books for test purposes
 /*
 let book1 = new Book("J.K. Simmons", "Tobey Potter and the Arm", 500, true);
