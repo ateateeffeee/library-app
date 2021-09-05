@@ -106,18 +106,21 @@ function displayForm(){
     author.setAttribute("type", "text");
     author.setAttribute("placeholder", "Author");
     author.setAttribute("id", "author");
+    author.required = true;
     document.getElementById("entryForm").appendChild(author);
 
     let title = document.createElement("input");
     title.setAttribute("type", "text");
     title.setAttribute("placeholder", "Book Title");
     title.setAttribute("id", "title");
+    title.required = true;
     document.getElementById("entryForm").appendChild(title);
 
     let pages = document.createElement("input");
     pages.setAttribute("type", "number");
     pages.setAttribute("placeholder", "Pages");
     pages.setAttribute("id", "pages");
+    pages.required = true;
     document.getElementById("entryForm").appendChild(pages);
     /*Old button
     let read = document.createElement("input");
@@ -305,23 +308,36 @@ displayLibrary(myLibrary);
 //Executed when user clicks "save" or "read" when adding new book
 document.getElementById('entryForm').addEventListener("click", function(event) {
     let target = event.target;
+
+    let authorBox = document.getElementById('author');
+    let titleBox = document.getElementById('title');
+    let pagesBox = document.getElementById('pages');
+
     console.log(target.id);
 
     if (target.id == "save") {
-    author = document.getElementById('author').value;
-    title = document.getElementById('title').value;
-    pages = document.getElementById('pages').value;
-    //read will have to be changed to a button for continuity
-    read = document.getElementById('read').value;
-    
-    //Adds book to library
-    addBookToLibrary(author, title, pages, read);
- 
-    //delete all child divs after saving
-    let entryFormDiv = document.getElementById("entryForm");
-    while (entryFormDiv.lastElementChild) {
-        entryFormDiv.removeChild(entryFormDiv.lastElementChild);
+        //Client-side form validation
+        if ((authorBox.validity.valueMissing) || (titleBox.validity.required)
+        || (pagesBox.validity.valueMissing)) {
+            alert('Please fill in all three fields.');
+            console.log(pagesBox.validity);
+        } else {
+            author = document.getElementById('author').value;
+            title = document.getElementById('title').value;
+            pages = document.getElementById('pages').value;
+            //read will have to be changed to a button for continuity
+            read = document.getElementById('read').value;
+            
+            //Adds book to library
+            addBookToLibrary(author, title, pages, read);
+         
+            //delete all child divs after saving
+            let entryFormDiv = document.getElementById("entryForm");
+            while (entryFormDiv.lastElementChild) {
+                entryFormDiv.removeChild(entryFormDiv.lastElementChild);
+                }
         }
+
     }
 
     if (target.id == "read") {

@@ -64,3 +64,15 @@
   #eraseButton:hover {
     background-color: rgb(255, 77, 225);
   }
+
+  input:invalid {
+    border: 2px solid red;
+  }
+  
+  input:invalid:required {
+    
+  }
+  
+  input:valid {
+    
+  }
